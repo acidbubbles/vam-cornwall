@@ -1,6 +1,6 @@
 using System;
 
-public class MyPlugin : MVRScript
+public class Cornwall : MVRScript
 {
     public override void Init()
     {
