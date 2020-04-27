@@ -5,10 +5,9 @@ using UnityEngine;
 
 public class Cornwall : MVRScript
 {
-    public const float Padding = 0.2f;
-
     private JSONStorableFloat _intensityJSON;
     private JSONStorableFloat _variabilityJSON;
+    private JSONStorableFloat _paddingJSON;
     private AudioSourceControl _headAudioSource;
     private float _next;
     private Dictionary<int, List<NamedAudioClip>> _clips;
@@ -134,6 +133,10 @@ public class Cornwall : MVRScript
             _variabilityJSON = new JSONStorableFloat("Variability", (maxValue - minValue) / 8f, 0f, (maxValue - minValue) / 2f);
             RegisterFloat(_variabilityJSON);
             CreateSlider(_variabilityJSON);
+
+            _paddingJSON = new JSONStorableFloat("Padding", 0.2f, 0f, 5f, false);
+            RegisterFloat(_paddingJSON);
+            CreateSlider(_paddingJSON);
         }
         catch (Exception e)
         {
@@ -157,7 +160,7 @@ public class Cornwall : MVRScript
             var clip = clips[UnityEngine.Random.Range(0, clips.Count - 1)];
 
             _headAudioSource.PlayIfClear(clip);
-            _next = Time.time + clip.sourceClip.length + Padding;
+            _next = Time.time + clip.sourceClip.length + _paddingJSON.val;
         }
         catch (Exception e)
         {
