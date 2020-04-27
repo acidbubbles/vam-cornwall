@@ -3,9 +3,9 @@
    "creatorName" : "Acidbubbles", 
    "packageName" : "Cornwall", 
    "includeVersionsInReferences" : "true", 
-   "description" : "v0.0.0 Cornwall Description", 
-   "credits" : "", 
-   "instructions" : "", 
+   "description" : "v0.0.0 Audio-only breathing script using built-in Pixie audio clips.", 
+   "credits" : "WeebU, he's the one who wanted this in the first place and provided the intensity categorization.", 
+   "instructions" : "Add to a Person atom", 
    "promotionalLink" : "https://github.com/Acidbubbles/Cornwall", 
    "programVersion" : "1.19.0.5", 
    "contentList" : [ 
